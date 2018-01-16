@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ccut.invoice.user.dao.UserMapperCustom" >
+  <insert id="addUser" parameterType="cn.ccut.invoice.user.model.UserCustom">
+  	INSERT INTO USER(NAME,PASSWORD,email,CODE) VALUES(#{name},#{password},#{email},#{code})
+  </insert>
+  
+  <select id="findByEmail" parameterType="java.lang.String" resultType="cn.ccut.invoice.user.model.User">
+  	SELECT * FROM USER WHERE email=#{email}
+  </select>
+  
+  <select id="findByCode" parameterType="java.lang.String" resultType="cn.ccut.invoice.user.model.User">
+  	SELECT * FROM USER WHERE code=#{code}
+  </select>
+  
+  <update id="updateState" parameterType="cn.ccut.invoice.user.model.User">
+  	UPDATE USER SET state=#{state} WHERE uid=#{uid}
+  </update>
+  
+  <update id="deleteUser" parameterType="java.lang.String">
+  	DELETE FROM USER WHERE CODE=#{code}
+  </update>
+  
+</mapper>
