@@ -26,7 +26,7 @@
         <property name="jdbcUrl" value="${jdbc.url}"/>
         <property name="user" value="${jdbc.username}"/>
         <property name="password" value="${jdbc.password}"/>
-        <property name="initialPoolSize" value="${jdbc.initPoolSize}"/>
+        <property name="initialPoolSize" value="${jdbc.initialPoolSize}"/>
         <property name="minPoolSize" value="${jdbc.minPoolSize}"/>
         <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
     </bean>
