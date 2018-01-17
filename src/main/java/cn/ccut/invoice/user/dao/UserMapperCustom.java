@@ -3,6 +3,8 @@ package cn.ccut.invoice.user.dao;
 import cn.ccut.invoice.user.model.User;
 import cn.ccut.invoice.user.model.UserCustom;
 
+import java.util.List;
+
 /**
  * UserMapper的扩展Mapper
  * @author ASUS-PC
@@ -40,6 +42,8 @@ public interface UserMapperCustom extends UserMapper{
      * @param code
      */
     public void deleteUser(String code);
+
+    List<User> selectAll();
 }
 
 

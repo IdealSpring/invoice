@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"        
+    xmlns:mvc="http://www.springframework.org/schema/mvc"     
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"              
+    xsi:schemaLocation="                                               
+            http://www.springframework.org/schema/beans    
+            http://www.springframework.org/schema/beans/spring-beans.xsd    
+            http://www.springframework.org/schema/context     
+            http://www.springframework.org/schema/context/spring-context.xsd    
+            http://www.springframework.org/schema/mvc    
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+            http://www.springframework.org/schema/tx   
+            http://www.springframework.org/schema/tx/spring-tx.xsd  
+            http://www.springframework.org/schema/aop  
+            http://www.springframework.org/schema/aop/spring-aop.xsd ">
+
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!--<property name="cacheManager" ref="cacheManager"/>-->
+        <property name="realm" ref="jdbcRealm"/>
+    </bean>
+
+    <!-- 自定义Realm -->
+    <bean id="jdbcRealm" class="cn.ccut.invoice.user.shirorealm.ShiroRealm"></bean>
+
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!-- 开启Shiro注解 -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+    
+    <!-- 
+    	6. 配置shiroFilter
+    	6.1 id必须和web.xml中的一致
+     -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/jsps/user/login.jsp"/>
+        <property name="successUrl" value="/jsps/index.jsp"/>
+        <property name="unauthorizedUrl" value="/jsps/user/login.jsp"/>
+         
+    	<!-- 配置那些页面受保护。
+    		以及访问这些界面需要的访问权限。
+    		1). anon：可以被匿名访问
+    		2). authc：登陆后才可以访问的界面
+    		3). logout:表示登出
+    		4). roles角色过滤器
+    		5). user认证过或通过记住我可访问 -->
+     	
+         <property name="filterChainDefinitions">
+            <value>
+            	
+                /jsps/user/** = anon
+                /static/** = anon
+                /user/** = anon
+                /logout = logout
+                /** = anon
+                
+                 /jsps/index.jsp = roles[user]
+                 /jsps/admin.jsp = roles[admin]
+                
+                # everything else requires authentication:
+                 /** = authc
+            </value>
+        </property>
+    </bean> 
+    
+</beans> 
+
+
+
+
+
+
+
+
+
+

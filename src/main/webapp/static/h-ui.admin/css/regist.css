@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* 你自己的样式 */
+#loginform div,label{
+	position: relative;
+	top: -23px;
+}
+#label {
+	position: relative;
+	left: -30px
+}
+#div {
+	width: 485px;
+	position: absolute;
+	left: -40px
+}
+#verfyimage {
+	height: 50px;
+	width: 100px;
+}
+.msgerror {
+	position: absolute;
+	top: 60px;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	/* background: rgb(0,164,255); */
+	font-size: 20px;
+	line-height: 50px;
+	color: white;
+}
+
+
+
+
+
