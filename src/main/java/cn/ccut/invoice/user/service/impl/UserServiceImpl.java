@@ -38,7 +38,16 @@ public class UserServiceImpl implements UserService {
 		
 		return queryUserVo;
 	}
-	
+
+	/**
+	 * 通过Email查询用户
+	 * @param email
+	 * @return
+	 */
+	public User findByEmail(String email) {
+		return uerMapperCustom.findByEmail(email);
+	}
+
 	/**
 	 * 添加用户
 	 */

@@ -1,5 +1,6 @@
 package cn.ccut.invoice.user.controller;
 
+import cn.ccut.invoice.user.model.User;
 import cn.ccut.invoice.user.model.UserCustom;
 import cn.ccut.invoice.user.service.UserService;
 import cn.itcast.vcode.utils.VerifyCode;
@@ -90,6 +91,10 @@ public class UserLoginController {
    				return modelAndView;
             }
         }
+
+        /*保存用户ID到Session域*/
+		User user = userService.findByEmail(userCustom.getEmail());
+        request.getSession().setAttribute("roleID", user.getUid());
 		modelAndView.setViewName("/jsps/index.jsp");
 		return modelAndView;
 	}

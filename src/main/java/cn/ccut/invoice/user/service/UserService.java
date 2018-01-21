@@ -1,6 +1,7 @@
 package cn.ccut.invoice.user.service;
 
 import cn.ccut.invoice.user.model.QueryUserVo;
+import cn.ccut.invoice.user.model.User;
 import cn.ccut.invoice.user.model.UserCustom;
 
 /**
@@ -9,6 +10,13 @@ import cn.ccut.invoice.user.model.UserCustom;
  *
  */
 public interface UserService {
+	/**
+	 * 通过email查询用户
+	 * @param email
+	 * @return
+	 */
+	public User findByEmail(String email);
+
 	/**
 	 * 添加用户
 	 * @param userCustom

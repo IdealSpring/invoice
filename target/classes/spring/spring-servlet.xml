@@ -21,8 +21,20 @@
 	<context:component-scan base-package="cn.ccut.invoice"/>
 
     <!--MVC代理，映射器及适配器-->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService">
+        <!--处理json返回值乱码问题-->
+       <!-- <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>-->
+    </mvc:annotation-driven>
     <mvc:default-servlet-handler/>
+
 
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -30,15 +42,22 @@
 		<property name="suffix" value=".jsp"></property> -->
     </bean>
 
-    <!--文件上传-->
-    <bean name="MultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <!-- set the max upload size100MB -->
-        <property name="maxUploadSize">
-            <value>104857600</value>
+    <!--自定义参数绑定-->
+    <bean name="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <!--转换器-->
+        <property name="converters">
+            <list>
+                <!--日期类型转换-->
+                <bean class="cn.ccut.invoice.indata.controller.converter.DataConverter"/>
+            </list>
         </property>
-        <property name="maxInMemorySize">
-            <value>4096</value>
-        </property>
+    </bean>
+
+    <!--文件上传, 配置-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!--set the max upload size100MB-->
+        <property name="maxUploadSize" value="104857600"/>
     </bean>
 </beans> 
 

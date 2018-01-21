@@ -28,10 +28,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  <a href="javascript:;" onclick="downloading()" class="btn btn-primary radius">
 				  <i class="Hui-iconfont">&#xe640;</i> 下载模板
 			  </a>
-			  <a href="javascript:;" onclick="dataDdd('添加进销项数据','jsps/indata/add_data.jsp','700','400')" class="btn btn-primary radius">
+			  <a href="javascript:;" onclick="dataDdd('添加进销项数据','jsps/indata/add_data.jsp','400','360')" class="btn btn-primary radius">
 				  <i class="Hui-iconfont">&#xe640;</i> 单条导入
 			  </a>
-			  <a href="javascript:;" onclick="datadel()" class="btn btn-primary radius">
+			  <a href="javascript:;" onclick="dataDdd('Excel批量导入','jsps/indata/batch_data.jsp','350','170')" class="btn btn-primary radius">
 				  <i class="Hui-iconfont">&#xe640;</i> 批量导入
 			  </a>
 
