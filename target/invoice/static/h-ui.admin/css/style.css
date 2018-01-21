@@ -1,0 +1,11 @@
+.indexPosotion {
+    position: relative;
+    top: -30px;
+}
+.pageDiv {
+    float: right;
+}
+.pageDiv> li {
+    size: 5px;
+}
+

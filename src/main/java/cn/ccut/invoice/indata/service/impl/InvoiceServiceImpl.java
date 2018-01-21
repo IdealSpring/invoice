@@ -2,6 +2,7 @@ package cn.ccut.invoice.indata.service.impl;
 
 import cn.ccut.invoice.indata.dao.InvoiceMapperCustom;
 import cn.ccut.invoice.indata.model.InvoiceCustom;
+import cn.ccut.invoice.indata.model.PageBean;
 import cn.ccut.invoice.indata.service.InvoiceService;
 import jxl.Cell;
 import jxl.Sheet;
@@ -82,5 +83,25 @@ public class InvoiceServiceImpl implements InvoiceService {
      */
     public void insertOneRecord(InvoiceCustom invoiceCustom) throws Exception{
         invoiceMapperCustom.insertSelective(invoiceCustom);
+    }
+
+    /**
+     * 查询分分页所有记录
+     * @param pageCode
+     * @param pageSize
+     * @return
+     */
+    public PageBean selectAll(int uid, int pageCode, int pageSize) {
+        PageBean pageBean = new PageBean();
+        pageBean.setUid(uid);
+        pageBean.setPageCode(pageCode);
+        pageBean.setPageSize(pageSize);
+
+        int total = invoiceMapperCustom.selectAllCount(uid);
+        pageBean.setTotalRecord(total);
+        List<InvoiceCustom> list = invoiceMapperCustom.selectByLimit(uid, (pageCode-1)*pageSize, pageSize);
+        pageBean.setList(list);
+
+        return pageBean;
     }
 }

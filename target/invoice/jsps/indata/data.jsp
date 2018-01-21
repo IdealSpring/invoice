@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -14,6 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<link rel="stylesheet" href="static/assets/css/amazeui.min.css">
+	<link rel="stylesheet" href="static/assets/css/app.css">
 	<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
 	<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
 	<link rel="stylesheet" type="text/css" href="static/Hui-iconfont/1.0.8/iconfont.css" />
@@ -22,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   <body>
   <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 数据导入 <span class="c-gray en">&gt;</span> 进销数据 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-  <div class="page-container">
+  <div class="page-container indexPosotion">
 	  <div class="cl pd-5 bg-1 bk-gray mt-20">
 		  <span class="l">
 			  <a href="javascript:;" onclick="downloading()" class="btn btn-primary radius">
@@ -35,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  <i class="Hui-iconfont">&#xe640;</i> 批量导入
 			  </a>
 
-		  </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+		  </span> <span class="r">第<strong>${pageBean.pageCode}</strong>页/共<strong>${pageBean.totalPage}</strong>页</span> </div>
 	  <div class="mt-20">
 		  <table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			  <thead>
@@ -51,40 +54,97 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  </tr>
 			  </thead>
 			  <tbody>
+			  <c:forEach items="${pageBean.list}" var="value">
 			  <tr class="text-c">
-				  <td><input type="checkbox" value="" name=""></td>
-				  <td>201802180000001</td>
-				  <td>大豆</td>
-				  <td>进项数据</td>
-				  <td>2600万</td>
-				  <td>2014-6-11 11:11:42</td>
-				  <td>2014-6-11 11:11:42</td>
+				  <td><input type="checkbox" value="${value.iid}" name="iid"></td>
+				  <td>${value.number}</td>
+				  <td>${value.name}</td>
+				  <c:choose>
+					  <c:when test="${value.kind == true}">
+						  <td>进项数据</td>
+					  </c:when>
+					  <c:otherwise>
+						  <td>销项数据</td>
+					  </c:otherwise>
+				  </c:choose>
+				  <td>${value.money}</td>
+				  <td><fmt:formatDate value="${value.date}" pattern="yyyy-MM-dd"/></td>
+				  <td><fmt:formatDate value="${value.inputdate}" pattern="yyyy-MM-dd HH-mm-ss"/></td>
 				  <td class="f-14 td-manage"> <a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			  </tr>
-			  <tr class="text-c">
-				  <td><input type="checkbox" value="" name=""></td>
-				  <td>201802180000001</td>
-				  <td>大豆</td>
-				  <td>进项数据</td>
-				  <td>2600万</td>
-				  <td>2014-6-11 11:11:42</td>
-				  <td>2014-6-11 11:11:42</td>
-				  <td class="f-14 td-manage"> <a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-			  </tr>
+			  </c:forEach>
 			  </tbody>
 		  </table>
+		  <div class="pageDiv">
+			  <ul data-am-widget="pagination"
+				  class="am-pagination am-pagination-default">
+				  <li class="am-pagination-first">
+					  <a href="<c:url value="/indata/pageRecord?pageCode=1"/>" class="am-btn-xs">首页</a>
+				  </li>
+				  <c:if test="${pageBean.pageCode > 1}">
+				  <li class="am-pagination-prev">
+					  <a href="<c:url value="/indata/pageRecord?pageCode=${pageBean.pageCode - 1}"/>" class="am-btn-xs">上一页</a>
+				  </li>
+				  </c:if>
+
+				  <c:choose>
+					  <c:when test="${pageBean.totalPage <= 10}">
+						  <c:set var="begin" value="1"/>
+						  <c:set var="end" value="${pageBean.totalPage}"/>
+					  </c:when>
+					  <c:otherwise>
+						  <c:set var="begin" value="${pageBean.pageCode - 5}"/>
+						  <c:set var="end" value="${pageBean.pageCode + 4}"/>
+						  <c:if test="${begin < 1}">
+							  <c:set var="begin" value="1"/>
+							  <c:set var="end" value="10"/>
+						  </c:if>
+						  <c:if test="${end > pageBean.totalPage}">
+							  <c:set var="begin" value="${pageBean.totalPage - 9}"/>
+							  <c:set var="end" value="${pageBean.totalPage}"/>
+						  </c:if>
+					  </c:otherwise>
+				  </c:choose>
+				  <c:forEach var="i" begin="${begin}" end="${end}">
+					  <li class="">
+						  <a href="<c:url value="/indata/pageRecord?pageCode=${i}"/>" class="am-btn-xs">${i}</a>
+					  </li>
+				  </c:forEach>
+
+				  <c:if test="${pageBean.pageCode < pageBean.totalPage}">
+				  <li class="am-pagination-next">
+					  <a href="<c:url value="/indata/pageRecord?pageCode=${pageBean.pageCode + 1}"/>" class="am-btn-xs">下一页</a>
+				  </li>
+				  </c:if>
+				  <li class="am-pagination-last am-btn-xs">
+					  <a href="<c:url value="/indata/pageRecord?pageCode=${pageBean.totalPage}"/>" class="am-btn-xs">尾页</a>
+				  </li>
+			  </ul>
+		  </div>
+
 	  </div>
   </div>
   <!--_footer 作为公共模版分离出去-->
-  <script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="static/layer/2.4/layer.js"></script>
-  <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
-  <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="static/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
-  <!--请在下方写此页面业务相关的脚本-->
-  <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
-  <script type="text/javascript" src="static/datatables/1.10.0/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="static/myscript/data_js.js"></script>
-
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="static/My97DatePicker/4.8/WdatePicker.js"></script>
+<script src="static/assets/js/amazeui.min.js"></script>
+<%--<script type="text/javascript" src="static/datatables/1.10.0/jquery.dataTables.min.js"></script>--%>
+<script type="text/javascript" src="static/myscript/data_js.js"></script>
+<script type="text/javascript">
+    $('.table-sort').dataTable({
+        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+        "bStateSave": true,//状态保存
+        "pading":false,
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {"orderable":false,"aTargets":[0,8]}// 不参与排序的列
+        ]
+    });
+</script>
   </body>
 </html>

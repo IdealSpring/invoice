@@ -9,4 +9,12 @@
             (#{item.number},#{item.name},#{item.kind},#{item.money},#{item.uid},#{item.date})
         </foreach>
     </insert>
+
+    <select id="selectAllCount" parameterType="int" resultType="int">
+        SELECT COUNT(*) FROM invoice WHERE uid=#{uid}
+    </select>
+
+    <select id="selectByLimit" resultType="cn.ccut.invoice.indata.model.InvoiceCustom">
+        SELECT * FROM invoice WHERE uid=#{0} ORDER BY iid DESC LIMIT #{1},#{2}
+    </select>
 </mapper>

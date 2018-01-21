@@ -1,6 +1,7 @@
 package cn.ccut.invoice.indata.service;
 
 import cn.ccut.invoice.indata.model.InvoiceCustom;
+import cn.ccut.invoice.indata.model.PageBean;
 
 import java.io.InputStream;
 import java.util.List;
@@ -22,6 +23,14 @@ public interface InvoiceService {
      * @throws Exception
      */
     public void insertOneRecord(InvoiceCustom invoiceCustom) throws Exception;
+
+    /**
+     * 查询页面信息
+     * @param pageCode
+     * @param pageSize
+     * @return
+     */
+    PageBean selectAll(int uid, int pageCode, int pageSize);
 }
 
 

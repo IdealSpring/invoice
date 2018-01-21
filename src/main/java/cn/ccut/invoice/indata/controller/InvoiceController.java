@@ -1,6 +1,7 @@
 package cn.ccut.invoice.indata.controller;
 
 import cn.ccut.invoice.indata.model.InvoiceCustom;
+import cn.ccut.invoice.indata.model.PageBean;
 import cn.ccut.invoice.indata.service.InvoiceService;
 import jxl.write.WritableWorkbook;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +21,31 @@ import java.io.InputStream;
 public class InvoiceController {
     @Resource(name = "invoiceServiceImpl")
     private InvoiceService invoiceServiceImpl;
+
+    /**
+     * 分页数据
+     * @return
+     */
+    @RequestMapping("/pageRecord")
+    public ModelAndView pageRecord(String pageCode, HttpServletRequest request) {
+        int pageSize = 10;
+        int pagecode = 1;
+
+        if(pageCode != null) {
+            pagecode = Integer.parseInt(pageCode);
+        }
+
+        //在session获取用户id
+       /* String uid = (String)request.getSession().getAttribute("roleID");
+        PageBean pageBean = invoiceServiceImpl.selectAll(Integer.parseInt(uid), pageCode, pageSize);*/
+        PageBean pageBean = invoiceServiceImpl.selectAll(10, pagecode, pageSize);
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("pageBean", pageBean);
+        modelAndView.setViewName("/jsps/indata/data.jsp");
+
+        return modelAndView;
+    }
 
     @RequestMapping(value = "/insertBatchRecord", produces = "text/plain;charset=UTF-8")
     @ResponseBody
