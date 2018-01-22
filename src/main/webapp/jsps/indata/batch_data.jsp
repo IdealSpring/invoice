@@ -27,8 +27,6 @@
     <form enctype="multipart/form-data" action="<c:url value="/indata/insertBatchRecord"/>" method="post" class="form form-horizontal" id="submit">
         <div class="row cl">
             选择文件:<input type="file" id="excelPath"  name="file">
-            <%--${sessionScope.roleID}--%>
-            <input type="hidden" name="uid" value="10"/>
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">

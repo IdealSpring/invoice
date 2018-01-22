@@ -21,5 +21,25 @@ public interface InvoiceMapperCustom extends InvoiceMapper {
      */
     public int selectAllCount(int uid);
 
+    /**
+     * 分页的查询
+     * @param uid
+     * @param start
+     * @param pageSize
+     * @return
+     */
     public List<InvoiceCustom> selectByLimit(int uid, int start, int pageSize);
+
+    /**
+     * 删除单条记录
+     * @param iid
+     */
+    public void delectOneRecord(Integer iid);
+
+    /**
+     * 批量导出
+     * @param iid
+     * @return
+     */
+    public List<InvoiceCustom> selectByBatch(Integer[] iid);
 }

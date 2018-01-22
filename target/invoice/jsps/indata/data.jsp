@@ -37,9 +37,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  <a href="javascript:;" onclick="dataDdd('Excel批量导入','jsps/indata/batch_data.jsp','350','170')" class="btn btn-primary radius">
 				  <i class="Hui-iconfont">&#xe640;</i> 批量导入
 			  </a>
+			  <a href="javascript:;" id="downloadByBatch-btn" class="btn btn-primary radius">
+				  <i class="Hui-iconfont">&#xe640;</i> 批量下载
+			  </a>
 
 		  </span> <span class="r">第<strong>${pageBean.pageCode}</strong>页/共<strong>${pageBean.totalPage}</strong>页</span> </div>
 	  <div class="mt-20">
+
+		  <form id="downloadByBatch" action="<c:url value="/indata/downloadByBatch"/>" method="post">
 		  <table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			  <thead>
 			  <tr class="text-c">
@@ -70,11 +75,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  <td>${value.money}</td>
 				  <td><fmt:formatDate value="${value.date}" pattern="yyyy-MM-dd"/></td>
 				  <td><fmt:formatDate value="${value.inputdate}" pattern="yyyy-MM-dd HH-mm-ss"/></td>
-				  <td class="f-14 td-manage"> <a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				  <td class="f-14 td-manage">
+					  <%--jsps/indata/updata_data.jsp--%>
+                      <a style="text-decoration:none" class="ml-5" onClick="dataDdd('修改数据','<c:url value="/indata/selectOneRecord"/>?iid=${value.iid}','400','360')" href="javascript:;" title="编辑">
+                          <i class="Hui-iconfont">&#xe6df;</i>
+                      </a>
+                      <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'${value.iid}')" href="javascript:;" title="删除">
+                          <i class="Hui-iconfont">&#xe6e2;</i>
+                      </a>
+                  </td>
 			  </tr>
 			  </c:forEach>
 			  </tbody>
 		  </table>
+		  </form>
+
 		  <div class="pageDiv">
 			  <ul data-am-widget="pagination"
 				  class="am-pagination am-pagination-default">
@@ -136,15 +151,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%--<script type="text/javascript" src="static/datatables/1.10.0/jquery.dataTables.min.js"></script>--%>
 <script type="text/javascript" src="static/myscript/data_js.js"></script>
 <script type="text/javascript">
-    $('.table-sort').dataTable({
-        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
-        "bStateSave": true,//状态保存
-        "pading":false,
-        "aoColumnDefs": [
-            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-            {"orderable":false,"aTargets":[0,8]}// 不参与排序的列
-        ]
+
+	$(document).ready(function () {
+		$("#downloadByBatch-btn").bind("click", function () {
+		    $("#downloadByBatch").submit();
+			/*$("#downloadByBatch").ajaxSubmit({
+				success:function () {
+
+                },
+				error:function () {
+					alert("下载失败")
+                }
+			});*/
+        });
     });
+
+    function article_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '<c:url value="/indata/deleteOneRecord"/>?iid=' + id,
+                success: function(data){
+                    alert(data);
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
+                    location.replace(location.href);
+
+                },
+                error:function(data) {
+                    alert("失败！");
+                },
+            });
+        });
+    }
 </script>
   </body>
 </html>

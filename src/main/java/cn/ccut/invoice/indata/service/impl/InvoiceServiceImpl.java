@@ -1,6 +1,7 @@
 package cn.ccut.invoice.indata.service.impl;
 
 import cn.ccut.invoice.indata.dao.InvoiceMapperCustom;
+import cn.ccut.invoice.indata.model.Invoice;
 import cn.ccut.invoice.indata.model.InvoiceCustom;
 import cn.ccut.invoice.indata.model.PageBean;
 import cn.ccut.invoice.indata.service.InvoiceService;
@@ -39,10 +40,9 @@ public class InvoiceServiceImpl implements InvoiceService {
         Sheet[] sheets = workbook.getSheets();
         for (int i = 0; i < sheets.length; i++) {
             int rows = sheets[i].getRows();
-            int columns = sheets[i].getColumns();
 
             if(rows >= 1) {
-                for (int j = 1; j < rows; j++) {
+                for (int j = 1; j < rows ; j++) {
                     invoiceCustom = new InvoiceCustom();
                     Cell[] cells = sheets[i].getRow(j);
 
@@ -103,5 +103,40 @@ public class InvoiceServiceImpl implements InvoiceService {
         pageBean.setList(list);
 
         return pageBean;
+    }
+
+    /**
+     * 删除单条记录
+     * @param iid
+     * @throws Exception
+     */
+    public void deleteOneRecord(Integer iid) throws Exception {
+        invoiceMapperCustom.delectOneRecord(iid);
+    }
+
+    /**
+     * 单条查询
+     * @param iid
+     * @return
+     */
+    public Invoice selectOneRecord(Integer iid) {
+        return invoiceMapperCustom.selectByPrimaryKey(iid);
+    }
+
+    /**
+     * 修改一条记录
+     * @param invoice
+     */
+    public void updateOneRecord(Invoice invoice) {
+        invoiceMapperCustom.updateByPrimaryKeySelective(invoice);
+    }
+
+    /**
+     * 下载内容
+     * @param iid
+     * @return
+     */
+    public List<InvoiceCustom> getBatchRecord(Integer[] iid) {
+        return invoiceMapperCustom.selectByBatch(iid);
     }
 }

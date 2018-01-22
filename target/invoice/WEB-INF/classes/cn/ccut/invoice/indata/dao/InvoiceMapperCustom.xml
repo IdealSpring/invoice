@@ -17,4 +17,16 @@
     <select id="selectByLimit" resultType="cn.ccut.invoice.indata.model.InvoiceCustom">
         SELECT * FROM invoice WHERE uid=#{0} ORDER BY iid DESC LIMIT #{1},#{2}
     </select>
+
+    <delete id="delectOneRecord" parameterType="java.lang.Integer">
+        DELETE FROM invoice WHERE iid=#{iid}
+    </delete>
+
+    <select id="selectByBatch" parameterType="java.lang.Integer" resultType="cn.ccut.invoice.indata.model.InvoiceCustom">
+        SELECT * FROM invoice WHERE iid IN (
+        <foreach collection="array" item="item" index="index" separator=",">
+            #{item}
+        </foreach>
+        )
+    </select>
 </mapper>
