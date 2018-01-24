@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt><i class="Hui-iconfont">&#xe616;</i> 数据导入<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="<c:url value="/indata/pageRecord"/>" data-title="进销项数据" href="javascript:void(0)">进销数据</a></li>
+					<li><a data-href="<c:url value="/indata/pageRecord"/>" data-title="进销项数据" href="javascript:void(0)">进销项数据</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -74,8 +74,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt><i class="Hui-iconfont">&#xe613;</i> 数据查询<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="picture-list.html" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
-					<li><a data-href="picture-list.html" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
+					<li><a data-href="picture-list.html" data-title="进项数据查询" href="javascript:void(0)">进项数据查询</a></li>
+					<li><a data-href="picture-list.html" data-title="销项数据查询" href="javascript:void(0)">销项数据查询</a></li>
 			</ul>
 		</dd>
 	</dl>

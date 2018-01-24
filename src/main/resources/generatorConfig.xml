@@ -34,20 +34,20 @@
         </javaTypeResolver>
 
         <!--步骤3：要生成的 model 模块位置-->
-        <javaModelGenerator targetPackage="cn.ccut.invoice.indata.model"
+        <javaModelGenerator targetPackage="cn.ccut.invoice.statistics.model"
                             targetProject="D:\idealU\workspace\invoice\src\main\java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--步骤4：要生成的 Mapper.xml 文件位置-->
-        <sqlMapGenerator targetPackage="cn.ccut.invoice.indata.dao"
+        <sqlMapGenerator targetPackage="cn.ccut.invoice.statistics.dao"
                          targetProject="D:\idealU\workspace\invoice\src\main\java">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!--步骤5：要生成的 Mapper 接口类-->
-        <javaClientGenerator targetPackage="cn.ccut.invoice.indata.dao"
+        <javaClientGenerator targetPackage="cn.ccut.invoice.statistics.dao"
                              targetProject="D:\idealU\workspace\invoice\src\main\java" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
