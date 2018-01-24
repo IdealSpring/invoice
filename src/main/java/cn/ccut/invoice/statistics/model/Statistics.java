@@ -3,7 +3,7 @@ package cn.ccut.invoice.statistics.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Invoice {
+public class Statistics {
     private Integer iid;
 
     private String number;

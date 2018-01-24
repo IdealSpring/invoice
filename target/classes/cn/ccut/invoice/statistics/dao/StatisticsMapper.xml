@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.ccut.invoice.statistics.dao.InvoiceMapper" >
-  <resultMap id="BaseResultMap" type="cn.ccut.invoice.statistics.model.Invoice" >
+<mapper namespace="cn.ccut.invoice.statistics.dao.StatisticsMapper" >
+  <resultMap id="BaseResultMap" type="cn.ccut.invoice.statistics.model.Statistics" >
     <id column="iid" property="iid" jdbcType="INTEGER" />
     <result column="number" property="number" jdbcType="CHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -24,7 +24,7 @@
     delete from invoice
     where iid = #{iid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.ccut.invoice.statistics.model.Invoice" >
+  <insert id="insert" parameterType="cn.ccut.invoice.statistics.model.Statistics" >
     insert into invoice (iid, number, name, 
       kind, money, uid, date, 
       inputdate)
@@ -32,7 +32,7 @@
       #{kind,jdbcType=BIT}, #{money,jdbcType=DECIMAL}, #{uid,jdbcType=INTEGER}, #{date,jdbcType=DATE}, 
       #{inputdate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="cn.ccut.invoice.statistics.model.Invoice" >
+  <insert id="insertSelective" parameterType="cn.ccut.invoice.statistics.model.Statistics" >
     insert into invoice
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="iid != null" >
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.ccut.invoice.statistics.model.Invoice" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.ccut.invoice.statistics.model.Statistics" >
     update invoice
     <set >
       <if test="number != null" >
@@ -114,7 +114,7 @@
     </set>
     where iid = #{iid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.ccut.invoice.statistics.model.Invoice" >
+  <update id="updateByPrimaryKey" parameterType="cn.ccut.invoice.statistics.model.Statistics" >
     update invoice
     set number = #{number,jdbcType=CHAR},
       name = #{name,jdbcType=VARCHAR},

@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt><i class="Hui-iconfont">&#xe620;</i>数据统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="product-brand.html" data-title="品牌管理" href="javascript:void(0)">折线图</a></li>
+					<li><a data-href="<c:url value="/jsps/statistics/line_charts.jsp"/>" data-title="折线图" href="javascript:void(0)">折线图</a></li>
 					<li><a data-href="product-category.html" data-title="分类管理" href="javascript:void(0)">区域图</a></li>
 					<li><a data-href="product-list.html" data-title="产品管理" href="javascript:void(0)">柱状图</a></li>
 					<li><a data-href="product-list.html" data-title="产品管理" href="javascript:void(0)">饼图图</a></li>
