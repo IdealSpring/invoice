@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.ccut.invoice.statistics.dao.StatisticsMapperCustom" >
+    <select id="selectYears" parameterType="java.lang.Integer" resultType="java.util.Date">
+        SELECT DATE FROM invoice WHERE uid=#{uid}
+    </select>
 
+    <select id="selectChartsDate" resultType="cn.ccut.invoice.statistics.model.StatisticsCustom">
+        SELECT * FROM invoice WHERE uid=#{0} AND DATE LIKE CONCAT(#{1}, '%') AND kind=#{2}
+    </select>
 </mapper>
