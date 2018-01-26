@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt><i class="Hui-iconfont">&#xe613;</i> 数据查询<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="picture-list.html" data-title="进项数据查询" href="javascript:void(0)">进项数据查询</a></li>
+					<li><a data-href="<c:url value="/jsps/dataquery/inputdataquery.jsp"/>" data-title="进项数据查询" href="javascript:void(0)">进项数据查询</a></li>
 					<li><a data-href="picture-list.html" data-title="销项数据查询" href="javascript:void(0)">销项数据查询</a></li>
 			</ul>
 		</dd>

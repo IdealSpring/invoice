@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ccut.invoice.query.dao.QueryCustomMapper" >
+    <select id="selectAllCount" resultType="int">
+        SELECT count(*) FROM invoice WHERE uid=#{0} AND kind=#{1}
+    </select>
+
+    <select id="selectByLimit" resultType="cn.ccut.invoice.query.model.QueryCustom">
+        SELECT * FROM invoice WHERE uid=#{0} AND kind=#{3} LIMIT #{1},#{2}
+    </select>
+</mapper>
