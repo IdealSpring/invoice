@@ -28,13 +28,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="page-container indexPosotion">
 	  <div class="cl pd-5 bg-1 bk-gray mt-20" style="height: 42px;">
 		  <div class="text-c"> 日期范围：
-			  <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
+			  <input name="startDate" type="text" id="datemin" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" class="input-text Wdate" style="width:120px;">
 			  -
-			  <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
-			  <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
-			  <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+			  <input name="endDate" type="text" id="datemax" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" class="input-text Wdate" style="width:120px;">
+			  <input name="query" type="text" class="input-text" style="width:250px" placeholder="名称" id="" >
+			  <button type="button" onclick="submitQuery()" class="btn btn-success radius"  name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 
-              
+
 			  <span class="r">第<strong><span id="spanId-1"></span></strong>页/共<strong id="spanId-2"><span></span></strong>页</span> </div>
 		  </div>
 
@@ -72,6 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="static/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="static/myscript/data_js.js"></script>
 <script type="text/javascript">
+
     //格式化时间函数
     Date.prototype.Format = function (fmt) {
         var o = {
@@ -97,18 +98,125 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     var end = null;
     var tableValue = '';
     var ulValue = '';
+    var startDate = null;
+    var endDate = null;
+    var query = null;
 
-    function pageData(param) {
-        if(param == null) {
-            urlValue = '<c:url value="/query/queryAllinputData"/>';
-        } else {
-            urlValue = '<c:url value="/query/queryAllinputData"/>?pageCode=' + param;
-        }
-        var div = document.getElementById("tbodyId");
+    function  submitQuery() {
+        startDate = document.getElementsByName("startDate")[0].value;
+        endDate = document.getElementsByName("endDate")[0].value;
+        query = document.getElementsByName("query")[0].value;
 
+        var urlValue = '<c:url value="/query/queryAllinputData"/>?startDate=' + startDate + "&endDate=" + endDate + "&query=" + query;
         $.ajax({
             type:'POST',
             url:urlValue,
+            success:function(pageBean) {
+                pageCode = pageBean.pageCode;
+                totalPage = pageBean.totalPage;
+                totalRecord = pageBean.totalRecord;
+                pageSize = pageBean.pageSize;
+
+                for(var i = 0; i < pageBean.list.length; i++) {
+                    tableValue += '<tr class="text-c">';
+                    tableValue += '<td><input type="checkbox" value="' + pageBean.list[i].iid + '" name="iid"></td>';
+                    tableValue += '<td>' + pageBean.list[i].number + '</td>';
+                    tableValue += '<td>' + pageBean.list[i].name + '</td>';
+                    if(pageBean.list[i].kind == true) {
+                        tableValue += '<td>进项数据</td>';
+                    } else {
+                        tableValue += '<td>销项数据</td>';
+                    }
+                    tableValue += '<td>' + pageBean.list[i].money + '</td>';
+                    tableValue += '<td>' + new Date(pageBean.list[i].date).Format("yyyy-MM-dd") + '</td>';
+                    tableValue += '<td>' + new Date(pageBean.list[i].inputdate).Format("yyyy-MM-dd hh:mm:ss") + '</td>';
+                    tableValue += '</tr>';
+                }
+
+                document.getElementById("tbodyId").innerHTML = tableValue;
+                tableValue = '';
+
+                ulValue += '<ul data-am-widget="pagination" class="am-pagination am-pagination-default">';
+                ulValue += '<li class="am-pagination-first">';
+                ulValue += '<a class="am-btn-xs" id="firstPage">首页</a>';
+                ulValue += '</li>';
+
+                if(pageCode > 1) {
+                    ulValue += '<li class="am-pagination-prev">';
+                    ulValue += '<a class="am-btn-xs" id="upPage">上一页</a>';
+                    ulValue += '</li>';
+                }
+
+
+                if(totalPage <= 10) {
+                    begin = 1;
+                    end = totalPage;
+                } else {
+                    begin = pageCode - 5;
+                    end = pageCode + 4;
+                }
+
+                if(begin < 1) {
+                    begin = 1;
+                    end = 10;
+                }
+
+                if(end > totalPage) {
+                    begin = totalPage - 9;
+                    end = totalPage;
+                }
+
+                for(var i = begin; i <= end; i++) {
+                    ulValue += '<li>';
+                    ulValue += '<a class="am-btn-xs" id="newPage_' + i + '" onclick="javascript:pageData(' + i + ');">' + i + '</a>';
+                    ulValue += '</li>';
+                }
+
+                if(pageCode < totalPage) {
+                    ulValue += '<li class="am-pagination-next">';
+                    ulValue += '<a class="am-btn-xs" id="downPage">下一页</a>';
+                    ulValue += '</li>';
+                }
+
+                ulValue += '<li class="am-pagination-last am-btn-xs">';
+                ulValue += '<a class="am-btn-xs" id="endPage">尾页</a>';
+                ulValue += '</li>';
+                ulValue += '</ul>';
+
+                document.getElementById("ulId").innerHTML = ulValue;
+
+                bindAtion();
+
+                ulValue = '';
+
+                document.getElementById("spanId-1").innerHTML = pageCode;
+                document.getElementById("spanId-2").innerHTML = totalPage;
+            },
+            error:function() {
+                alert("加载失败");
+            }
+        });
+    }
+
+    function pageData(param) {
+        /*if(param == null) {
+            urlValue = '<c:url value="/query/queryAllinputData"/>';
+        } else {
+            urlValue = '<c:url value="/query/queryAllinputData"/>?pageCode=' + param;
+        }*/
+
+        if(param == null) {
+            var dataValue = 'pageCode=1' + '&startDate='+ startDate + '&endDate=' + endDate + '&query=' + query;
+
+
+        } else {
+            var dataValue = 'pageCode=' + param + '&startDate='+ startDate + '&endDate=' + endDate + '&query=' + query;
+        }
+
+        $.ajax({
+            type:'POST',
+            url:'<c:url value="/query/queryAllinputData"/>',
+			data:dataValue,
             success:function(pageBean) {
                 pageCode = pageBean.pageCode;
                 totalPage = pageBean.totalPage;
@@ -197,7 +305,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         return pageCode, totalPage, totalRecord, pageSize;
     }
 
-    pageData();
+    //pageData();
+    submitQuery();
 
     //绑定事件
     function bindAtion() {

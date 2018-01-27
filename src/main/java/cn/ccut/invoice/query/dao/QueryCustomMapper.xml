@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.ccut.invoice.query.dao.QueryCustomMapper" >
-    <select id="selectAllCount" resultType="int">
-        SELECT count(*) FROM invoice WHERE uid=#{0} AND kind=#{1}
+    <select id="selectAllCount" parameterType="cn.ccut.invoice.query.model.QueryVo" resultType="int">
+        SELECT count(*) FROM invoice WHERE uid=#{uid} AND kind=#{kind}
+        <if test="startDate != null and startDate != ''">
+            AND date<![CDATA[>=]]>#{startDate}
+        </if>
+        <if test="endDate != null and endDate!= ''">
+            AND date<![CDATA[<=]]>#{endDate}
+        </if>
+        <if test="query != null and query!= ''">AND name LIKE CONCAT(CONCAT('%', #{query}),'%')</if>
     </select>
 
-    <select id="selectByLimit" resultType="cn.ccut.invoice.query.model.QueryCustom">
-        SELECT * FROM invoice WHERE uid=#{0} AND kind=#{3} LIMIT #{1},#{2}
+    <select id="selectByLimit" parameterType="cn.ccut.invoice.query.model.QueryVo" resultType="cn.ccut.invoice.query.model.QueryCustom">
+        SELECT * FROM invoice WHERE uid=#{uid} AND kind=#{kind}
+        <if test="startDate != null and startDate != ''">
+            AND date<![CDATA[>=]]>#{startDate}
+        </if>
+        <if test="endDate != null and endDate!= ''">
+            AND date<![CDATA[<=]]>#{endDate}
+        </if>
+        <if test="query != null and query!= ''">AND name LIKE CONCAT(CONCAT('%', #{query}),'%')</if>
+        limit #{startIndex},#{pageSize}
     </select>
 </mapper>

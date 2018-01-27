@@ -107,7 +107,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         endDate = document.getElementsByName("endDate")[0].value;
         query = document.getElementsByName("query")[0].value;
 
-        var urlValue = '<c:url value="/query/queryAllinputData"/>?startDate=' + startDate + "&endDate=" + endDate + "&query=" + query;
+        var urlValue = '<c:url value="/query/queryAllOutputData"/>?startDate=' + startDate + "&endDate=" + endDate + "&query=" + query;
         $.ajax({
             type:'POST',
             url:urlValue,
@@ -215,7 +215,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         $.ajax({
             type:'POST',
-            url:'<c:url value="/query/queryAllinputData"/>',
+            url:'<c:url value="/query/queryAllOutputData"/>',
 			data:dataValue,
             success:function(pageBean) {
                 pageCode = pageBean.pageCode;

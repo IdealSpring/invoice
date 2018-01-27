@@ -1,6 +1,7 @@
 package cn.ccut.invoice.query.controller;
 
 import cn.ccut.invoice.query.model.PageBean;
+import cn.ccut.invoice.query.model.QueryVo;
 import cn.ccut.invoice.query.service.QueryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,15 +17,15 @@ public class QueryController {
     private QueryService queryService;
 
     /**
-     * 分页显示所有进项数据
+     * 分页显示所有销项数据
      * @param pageCode
      * @param request
      * @return
      */
-    @RequestMapping(value = "/queryAllinputData")
+    @RequestMapping(value = "/queryAllOutputData")
     @ResponseBody
-    public PageBean queryAllnputData(String pageCode, HttpServletRequest request) {
-        System.out.println(pageCode);
+    public PageBean queryAllOutputData(String pageCode, String startDate, String endDate, String query, HttpServletRequest request) {
+        System.out.println("pageCode:" + pageCode + ", " + "startDate:" + startDate + ", " + "endDate:" + endDate + ", " + "query:" + query);
         //获取用户roleID
         //String roleID = (String) request.getSession().getAttribute("roleID");
         Integer uid = 10;
@@ -35,7 +36,49 @@ public class QueryController {
             pagecode = Integer.parseInt(pageCode);
         }
 
-        PageBean pageBean = queryService.getAllInputData(uid, pagecode, pageSize);
+        QueryVo queryVo = new QueryVo();
+        queryVo.setUid(uid);
+        queryVo.setPageCode(pagecode);
+        queryVo.setPageSize(pageSize);
+        queryVo.setStartDate(startDate);
+        queryVo.setEndDate(endDate);
+        queryVo.setQuery(query);
+
+
+        PageBean pageBean = queryService.getAllOutputData(queryVo);
+        return pageBean;
+    }
+
+    /**
+     * 分页显示所有进项数据
+     * @param pageCode
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/queryAllinputData")
+    @ResponseBody
+    public PageBean queryAllnputData(String pageCode, String startDate, String endDate, String query, HttpServletRequest request) {
+        System.out.println("pageCode:" + pageCode + ", " + "startDate:" + startDate + ", " + "endDate:" + endDate + ", " + "query:" + query);
+        //获取用户roleID
+        //String roleID = (String) request.getSession().getAttribute("roleID");
+        Integer uid = 10;
+        int pagecode = 1;
+        int pageSize = 10;
+
+        if(pageCode != null) {
+            pagecode = Integer.parseInt(pageCode);
+        }
+
+        QueryVo queryVo = new QueryVo();
+        queryVo.setUid(uid);
+        queryVo.setPageCode(pagecode);
+        queryVo.setPageSize(pageSize);
+        queryVo.setStartDate(startDate);
+        queryVo.setEndDate(endDate);
+        queryVo.setQuery(query);
+
+
+        PageBean pageBean = queryService.getAllInputData(queryVo);
         return pageBean;
     }
 }
