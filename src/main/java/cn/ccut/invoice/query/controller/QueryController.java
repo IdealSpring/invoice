@@ -25,10 +25,8 @@ public class QueryController {
     @RequestMapping(value = "/queryAllOutputData")
     @ResponseBody
     public PageBean queryAllOutputData(String pageCode, String startDate, String endDate, String query, HttpServletRequest request) {
-        System.out.println("pageCode:" + pageCode + ", " + "startDate:" + startDate + ", " + "endDate:" + endDate + ", " + "query:" + query);
-        //获取用户roleID
-        //String roleID = (String) request.getSession().getAttribute("roleID");
-        Integer uid = 10;
+       //获取用户roleID
+        Integer uid = (Integer) request.getSession().getAttribute("roleID");
         int pagecode = 1;
         int pageSize = 10;
 
@@ -58,10 +56,8 @@ public class QueryController {
     @RequestMapping(value = "/queryAllinputData")
     @ResponseBody
     public PageBean queryAllnputData(String pageCode, String startDate, String endDate, String query, HttpServletRequest request) {
-        System.out.println("pageCode:" + pageCode + ", " + "startDate:" + startDate + ", " + "endDate:" + endDate + ", " + "query:" + query);
         //获取用户roleID
-        //String roleID = (String) request.getSession().getAttribute("roleID");
-        Integer uid = 10;
+        Integer uid = (Integer) request.getSession().getAttribute("roleID");
         int pagecode = 1;
         int pageSize = 10;
 

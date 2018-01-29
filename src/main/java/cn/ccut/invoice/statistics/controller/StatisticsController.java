@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -28,9 +27,7 @@ public class StatisticsController {
     @ResponseBody
     public StatisticsQueryVo onloadLineChart(Integer year,HttpServletRequest request) throws Exception {
         //从session中获取用户ID
-        //Integer uid = (Integer)request.getSession().getAttribute("roleID");
-
-        Integer uid = 10;
+        Integer uid = (Integer)request.getSession().getAttribute("roleID");
         Set<String> years = statisticsService.selectYears(uid);
 
         TreeSet<String> yearsTree = (TreeSet<String>) years;
@@ -43,9 +40,9 @@ public class StatisticsController {
         StatisticsQueryVo queryVo = statisticsService.selectChartData(uid,y);
         queryVo.setYears(years);
         queryVo.setYear(y.toString());
-        System.out.println(y);
+        /*System.out.println(y);
         System.out.println(Arrays.toString(queryVo.getInputDate()));
-        System.out.println(Arrays.toString(queryVo.getOutputDate()));
+        System.out.println(Arrays.toString(queryVo.getOutputDate()));*/
 
         /*ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("queryVo", queryVo);

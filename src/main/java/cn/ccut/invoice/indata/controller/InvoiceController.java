@@ -100,9 +100,10 @@ public class InvoiceController {
         }
 
         //在session获取用户id
-       /* String uid = (String)request.getSession().getAttribute("roleID");
-        PageBean pageBean = invoiceServiceImpl.selectAll(Integer.parseInt(uid), pageCode, pageSize);*/
-        PageBean pageBean = invoiceServiceImpl.selectAll(10, pagecode, pageSize);
+        Integer uid = (Integer)request.getSession().getAttribute("roleID");
+
+        PageBean pageBean = invoiceServiceImpl.selectAll(uid, pagecode, pageSize);
+        //PageBean pageBean = invoiceServiceImpl.selectAll(10, pagecode, pageSize);
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("pageBean", pageBean);
@@ -117,10 +118,11 @@ public class InvoiceController {
 
         //获取数据源
         try {
-            String roleID = (String)request.getSession().getAttribute("roleID");
+            Integer roleID = (Integer)request.getSession().getAttribute("roleID");
 
-            /*Integer uid = Integer.valueOf(roleID);*/
-            Integer uid = 10;
+
+            Integer uid = roleID;
+            //Integer uid = 10;
 
             InputStream inputStream = file.getInputStream();
             invoiceServiceImpl.insertByBatch(uid, inputStream);

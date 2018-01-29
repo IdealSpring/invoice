@@ -95,7 +95,18 @@ public class UserLoginController {
         /*保存用户ID到Session域*/
 		User user = userService.findByEmail(userCustom.getEmail());
         request.getSession().setAttribute("roleID", user.getUid());
-		modelAndView.setViewName("/jsps/index.jsp");
+		System.out.println("Long---roleID: " + user.getUid());
+
+		if(user.getRole().equals("user")) {
+			modelAndView.setViewName("/jsps/index.jsp");
+		}
+		if(user.getRole().equals("admin")) {
+			modelAndView.setViewName("/jsps/admin.jsp");
+		}
+		if(user.getRole().equals("super")) {
+			modelAndView.setViewName("/jsps/admin.jsp");
+		}
+
 		return modelAndView;
 	}
 	
