@@ -103,7 +103,6 @@ public class InvoiceController {
         Integer uid = (Integer)request.getSession().getAttribute("roleID");
 
         PageBean pageBean = invoiceServiceImpl.selectAll(uid, pagecode, pageSize);
-        //PageBean pageBean = invoiceServiceImpl.selectAll(10, pagecode, pageSize);
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("pageBean", pageBean);

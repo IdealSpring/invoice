@@ -97,7 +97,7 @@ public class UserLoginController {
         request.getSession().setAttribute("roleID", user.getUid());
 		System.out.println("Long---roleID: " + user.getUid());
 
-		/*if(user.getRole().equals("user")) {
+		if(user.getRole().equals("user")) {
 			modelAndView.setViewName("/jsps/index.jsp");
 		}
 		if(user.getRole().equals("admin")) {
@@ -105,8 +105,8 @@ public class UserLoginController {
 		}
 		if(user.getRole().equals("super")) {
 			modelAndView.setViewName("/jsps/admin.jsp");
-		}*/
-		modelAndView.setViewName("/jsps/admin.jsp");
+		}
+
 		return modelAndView;
 	}
 	
