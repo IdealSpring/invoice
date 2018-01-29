@@ -61,11 +61,11 @@
                 /user/** = anon
                 /logout = logout
                 
-                 /jsps/index.jsp = roles[user]
-                 /jsps/admin.jsp = roles[admin]
+                 <!--/jsps/index.jsp = roles[user]
+                 /jsps/admin.jsp = roles[admin]-->
                 
                 # everything else requires authentication:
-                 /** = authc
+                 <!--/** = authc-->
             </value>
         </property>
     </bean> 
