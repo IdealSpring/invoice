@@ -8,17 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5a554828-0432-496c-8373-f6e7628539fa" name="Default" comment="To complete!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/indata/controller/InvoiceController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/indata/controller/InvoiceController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/user/controller/UserLoginController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/user/controller/UserLoginController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/admin.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/ccut/invoice/indata/controller/InvoiceController.class" afterPath="$PROJECT_DIR$/target/classes/cn/ccut/invoice/indata/controller/InvoiceController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/ccut/invoice/user/controller/UserLoginController.class" afterPath="$PROJECT_DIR$/target/classes/cn/ccut/invoice/user/controller/UserLoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/cn/ccut/invoice/indata/controller/InvoiceController.class" afterPath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/cn/ccut/invoice/indata/controller/InvoiceController.class" />
-      <change beforePath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/cn/ccut/invoice/user/controller/UserLoginController.class" afterPath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/cn/ccut/invoice/user/controller/UserLoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/target/invoice/jsps/admin.jsp" afterPath="$PROJECT_DIR$/target/invoice/jsps/admin.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" afterPath="$PROJECT_DIR$/target/classes/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" afterPath="$PROJECT_DIR$/target/invoice/WEB-INF/classes/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,31 +64,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="userinformation.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/userinformation.jsp">
+      <file leaf-file-name="admininformation.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/admininformation.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="63" column="132" lean-forward="false" selection-start-line="63" selection-start-column="132" selection-end-line="63" selection-end-column="132" />
+            <state relative-caret-position="2216">
+              <caret line="150" column="58" lean-forward="false" selection-start-line="150" selection-start-column="58" selection-end-line="150" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateuser.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/updateuser.jsp">
+      <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/admin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-864">
-              <caret line="22" column="53" lean-forward="true" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+            <state relative-caret-position="398">
+              <caret line="77" column="77" lean-forward="false" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsermanagementController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/controller/UsermanagementController.java">
+      <file leaf-file-name="AdminManagementController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/controller/AdminManagementController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+            <state relative-caret-position="276">
+              <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,37 +96,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_data.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/indata/add_data.jsp">
+      <file leaf-file-name="AdminManagementMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/dao/AdminManagementMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserManagementMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementMapper.java">
+      <file leaf-file-name="AdminManagementServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/service/imple/AdminManagementServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="57" />
+            <state relative-caret-position="371">
+              <caret line="26" column="72" lean-forward="false" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsermanagementServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/service/impl/UsermanagementServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="63" column="71" lean-forward="false" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
-              <folding>
-                <element signature="e#1522#1523#0" expanded="true" />
-                <element signature="e#1588#1589#0" expanded="true" />
-                <element signature="e#1707#1708#0" expanded="true" />
-                <element signature="e#1780#1781#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -148,9 +127,9 @@
         <option value="JUnit4 Test Class" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -167,10 +146,12 @@
       <find>downloading</find>
       <find>inputDatas</find>
       <find>outputDatas</find>
-      <find>admin_role_del</find>
-      <find>admin_role_edit</find>
       <find>dataDdd</find>
       <find>updateByPrimaryKeySelective</find>
+      <find>selectUserPage</find>
+      <find>admin_role_add</find>
+      <find>admin_role_del</find>
+      <find>admin_role_edit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,18 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/jsps/dataquery/indataquery.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/model/InvocieCustom.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/model/InvoiceQueryVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/dao/InvoiceMapperCustom.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/dao/InvoiceMapperCustom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/service/InvoiceService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/controller/Statistics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/service/impl/InvoiceServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsps/statistics/charts.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/service/StatisticsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/model/StatisticsCustom.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/dao/StatisticsMapperCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/dao/StatisticsMapperCustom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/model/StatisticsQueryVo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/statistics/service/Impl/StatisticsServiceImpl.java" />
@@ -239,20 +208,32 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/user/shirorealm/ShiroRealm.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext-controller.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/user/controller/UserLoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/model/UserManagementCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/model/UserPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/indata/controller/InvoiceController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsps/indata/data.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsps/admin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/adduser.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/userinformation.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/updateuser.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/service/UsermanagementService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/service/impl/UsermanagementServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/controller/UsermanagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/model/AdminManagementCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/model/AdminPage.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/addadmin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/dao/AdminManagementCustomMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/dao/AdminManagementCustomMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/admininformation.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/updateadmin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsps/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/prem.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/prempage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/controller/AdminManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/service/AdminManagementService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/service/imple/AdminManagementServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -297,11 +278,6 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="invoice Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="invoice Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Run Configurations" type="21c1f71a:MavenProjectsStructure$RunConfigurationsNode" />
         </path>
         <path>
@@ -313,7 +289,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="1386" />
     <option name="height" value="729" />
@@ -352,9 +328,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -395,7 +368,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="indata" type="462c0819:PsiDirectoryNode" />
+              <item name="systemmanagement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
@@ -404,26 +377,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
+              <item name="systemmanagement" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -433,7 +387,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
+              <item name="systemmanagement" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -443,7 +397,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
+              <item name="systemmanagement" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -453,24 +407,9 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
+              <item name="systemmanagement" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="imple" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
@@ -494,16 +433,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="jsps" type="462c0819:PsiDirectoryNode" />
-              <item name="indata" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="invoice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="jsps" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
+              <item name="systemmanagement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="invoice" type="b2602c69:ProjectViewProjectNode" />
@@ -536,6 +466,9 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -556,25 +489,27 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="cn.ccut.invoice.user.dao" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\idealU\workspace\invoice\src\main\webapp\jsps\usermanagement" />
-      <recent name="D:\idealU\workspace\invoice\src\main\java\cn\ccut\invoice\usermanagement\dao" />
-      <recent name="D:\idealU\workspace\invoice\src\main\webapp\jsps\dataquery" />
-      <recent name="D:\idealU\workspace\invoice\src\main\java\cn\ccut\invoice\query\dao" />
-      <recent name="D:\idealU\workspace\invoice\src\main\webapp\static" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.ccut.invoice.query.model" />
-      <recent name="cn.ccut.invoice.query.dao" />
-      <recent name="cn.ccut.invoice.statistics.dao" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\idealU\workspace\invoice\src\main\webapp\jsps\statistics" />
       <recent name="D:\idealU\workspace\invoice\src\main\webapp\static\echarts" />
       <recent name="D:\idealU\workspace\invoice\src\main\webapp\static\h-ui\css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.ccut.invoice.systemmanagement.dao" />
+      <recent name="cn.ccut.invoice.systemmanagement.model" />
+      <recent name="cn.ccut.invoice.query.model" />
+      <recent name="cn.ccut.invoice.query.dao" />
+      <recent name="cn.ccut.invoice.statistics.dao" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idealU\workspace\invoice\src\main\webapp\jsps\systemmanagement" />
+      <recent name="D:\idealU\workspace\invoice\src\main\java\cn\ccut\invoice\systemmanagement\dao" />
+      <recent name="D:\idealU\workspace\invoice\src\main\webapp\jsps\usermanagement" />
+      <recent name="D:\idealU\workspace\invoice\src\main\java\cn\ccut\invoice\usermanagement\dao" />
+      <recent name="D:\idealU\workspace\invoice\src\main\webapp\jsps\dataquery" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -878,7 +813,8 @@
       <workItem from="1517099080164" duration="13922000" />
       <workItem from="1517124080834" duration="3084000" />
       <workItem from="1517183707499" duration="26122000" />
-      <workItem from="1517222976919" duration="6714000" />
+      <workItem from="1517222976919" duration="6890000" />
+      <workItem from="1517275121461" duration="10527000" />
     </task>
     <task id="LOCAL-00001" summary="My second conmmit">
       <created>1516096110587</created>
@@ -1000,7 +936,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389092000" />
+    <option name="totallyTimeSpent" value="399795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1012,7 +948,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1033,10 +969,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43396226" sideWeight="0.49546143" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48027444" sideWeight="0.49016643" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44596913" sideWeight="0.49016643" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761577" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23903178" sideWeight="0.48885077" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21406959" sideWeight="0.48885077" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19591528" sideWeight="0.5089514" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23524962" sideWeight="0.5111492" order="6" side_tool="true" content_ui="tabs" />
@@ -1081,112 +1017,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/dao/QueryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/dao/QueryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="91" column="8" lean-forward="false" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/model/Query.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/model/QueryVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/dao/QueryCustomMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/dao/QueryCustomMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.2.4.RELEASE/spring-webmvc-4.2.4.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/service/impl/QueryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/service/QueryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/dataquery/outputdataquery.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3051">
-          <caret line="217" column="56" lean-forward="false" selection-start-line="217" selection-start-column="56" selection-end-line="217" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/indata/dao/InvoiceMapperCustom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="66" lean-forward="false" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/indata/service/InvoiceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/user/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/query/controller/QueryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -1244,14 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
           <caret line="99" column="25" lean-forward="true" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1319,7 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1021">
           <caret line="107" column="61" lean-forward="false" selection-start-line="107" selection-start-column="61" selection-end-line="107" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,13 +1149,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1354,14 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="68" column="76" lean-forward="false" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-controller.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1755">
@@ -1374,7 +1180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,18 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="12" column="80" lean-forward="false" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
-          <folding>
-            <marker date="1517212260107" expanded="true" signature="294:319" ph="SELECT COUNT... user" />
-            <marker date="1517212260107" expanded="true" signature="447:481" ph="SELECT * FRO... USER" />
-            <marker date="1517212260107" expanded="true" signature="605:679" ph="INSERT INTO USER... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -1422,7 +1215,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/userinformation.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="1701">
           <caret line="63" column="132" lean-forward="false" selection-start-line="63" selection-start-column="132" selection-end-line="63" selection-end-column="132" />
           <folding />
         </state>
@@ -1430,48 +1223,205 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="57" />
+        <state relative-caret-position="351">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/updateuser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="53" lean-forward="false" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="52" column="30" lean-forward="true" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/model/AdminManagement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/model/AdminManagementCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/model/AdminPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/addadmin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-945">
+          <caret line="22" column="57" lean-forward="false" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="29" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/dao/UserManagementCustomMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <marker date="1517275341649" expanded="true" signature="294:319" ph="SELECT COUNT... user" />
+            <marker date="1517275341649" expanded="true" signature="447:499" ph="SELECT * FRO... USER" />
+            <marker date="1517275341649" expanded="true" signature="623:697" ph="INSERT INTO USER... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/dao/AdminManagementCustomMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="73" lean-forward="true" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
+          <folding>
+            <marker date="1517279829918" expanded="true" signature="297:357" ph="SELECT COUNT... USER" />
+            <marker date="1517279829918" expanded="true" signature="488:557" ph="SELECT * FRO... USER" />
+            <marker date="1517279829918" expanded="true" signature="684:771" ph="INSERT INTO USER... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/dao/AdminManagementCustomMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/controller/UsermanagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/updateadmin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="57" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/service/UsermanagementService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="162">
+          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/service/impl/UsermanagementServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="63" column="71" lean-forward="false" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
-          <folding>
-            <element signature="e#1522#1523#0" expanded="true" />
-            <element signature="e#1588#1589#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="e#1780#1781#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/usermanagement/updateuser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
-          <caret line="22" column="53" lean-forward="true" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+        <state relative-caret-position="492">
+          <caret line="62" column="26" lean-forward="false" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/usermanagement/controller/UsermanagementController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/admininformation.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+        <state relative-caret-position="2216">
+          <caret line="150" column="58" lean-forward="false" selection-start-line="150" selection-start-column="58" selection-end-line="150" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="77" column="77" lean-forward="false" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/service/AdminManagementService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="39" column="11" lean-forward="false" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/controller/AdminManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/prempage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <caret line="29" column="83" lean-forward="false" selection-start-line="29" selection-start-column="83" selection-end-line="29" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsps/systemmanagement/prem.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/dao/AdminManagementMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ccut/invoice/systemmanagement/service/imple/AdminManagementServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="26" column="72" lean-forward="false" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>

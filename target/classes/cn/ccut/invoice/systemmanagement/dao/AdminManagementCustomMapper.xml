@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ccut.invoice.systemmanagement.dao.AdminManagementCustomMapper" >
+    <select id="selectTotalRecord" resultType="int">
+        SELECT COUNT(*) FROM USER WHERE role='admin' OR role='super'
+    </select>
+
+    <select id="selectUserPage" resultType="cn.ccut.invoice.systemmanagement.model.AdminManagementCustom">
+        SELECT * FROM USER where role='admin' OR role='super' LIMIT #{0},#{1}
+    </select>
+
+    <insert id="addUser" parameterType="cn.ccut.invoice.systemmanagement.model.AdminManagementCustom">
+        INSERT INTO USER(NAME,PASSWORD,email,role) VALUES(#{name},#{password},#{email},'admin')
+    </insert>
+</mapper>

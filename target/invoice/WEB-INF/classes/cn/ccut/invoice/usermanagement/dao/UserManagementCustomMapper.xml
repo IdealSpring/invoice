@@ -6,7 +6,7 @@
     </select>
 
     <select id="selectUserPage" resultType="cn.ccut.invoice.usermanagement.model.UserManagementCustom">
-        SELECT * FROM USER LIMIT #{0},#{1}
+        SELECT * FROM USER where role='user' LIMIT #{0},#{1}
     </select>
 
     <insert id="addUser" parameterType="cn.ccut.invoice.usermanagement.model.UserManagementCustom">
