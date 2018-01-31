@@ -83,7 +83,7 @@
             <dt><i class="Hui-iconfont">&#xe620;</i>日志管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="<c:url value=""/>" data-title="折线图" href="javascript:void(0)">登录日志</a></li>
+                    <li><a data-href="<c:url value="/log/logList"/>" data-title="登录日志" href="javascript:void(0)">登录日志</a></li>
                 </ul>
             </dd>
         </dl>
