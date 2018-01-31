@@ -34,20 +34,20 @@
         </javaTypeResolver>
 
         <!--步骤3：要生成的 model 模块位置-->
-        <javaModelGenerator targetPackage="cn.ccut.invoice.systemmanagement.model"
+        <javaModelGenerator targetPackage="cn.ccut.invoice.loginlog.model"
                             targetProject="D:\idealU\workspace\invoice\src\main\java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--步骤4：要生成的 Mapper.xml 文件位置-->
-        <sqlMapGenerator targetPackage="cn.ccut.invoice.systemmanagement.dao"
+        <sqlMapGenerator targetPackage="cn.ccut.invoice.loginlog.dao"
                          targetProject="D:\idealU\workspace\invoice\src\main\java">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!--步骤5：要生成的 Mapper 接口类-->
-        <javaClientGenerator targetPackage="cn.ccut.invoice.systemmanagement.dao"
+        <javaClientGenerator targetPackage="cn.ccut.invoice.loginlog.dao"
                              targetProject="D:\idealU\workspace\invoice\src\main\java" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
@@ -55,7 +55,7 @@
 
         <!--步骤6：要根据哪张表生成，要在这里配置-->
         <!--用百分号表示生成所有表,可以直接省去一个一个写 <table tableName="%" /> -->
-        <table tableName="user" domainObjectName="AdminManagement" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="log" domainObjectName="Log" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
     </context>
 </generatorConfiguration>
 

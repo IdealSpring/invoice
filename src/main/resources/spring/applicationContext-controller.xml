@@ -39,12 +39,20 @@
     	6. 配置shiroFilter
     	6.1 id必须和web.xml中的一致
      -->
+    <!--必须这样注入，否者出错-->
+    <bean id="loginOutFilter" class="cn.ccut.invoice.loginlog.filter.LoginOutFilter"/>
+    <bean id="logService" class="cn.ccut.invoice.loginlog.service.impl.LogServiceImpl"/>
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/jsps/user/login.jsp"/>
         <property name="successUrl" value="/jsps/index.jsp"/>
         <property name="unauthorizedUrl" value="/jsps/user/login.jsp"/>
-         
+        <property name="filters">
+            <map>
+                <entry key="syslog" value-ref="loginOutFilter"></entry>
+            </map>
+        </property>
+
     	<!-- 配置那些页面受保护。
     		以及访问这些界面需要的访问权限。
     		1). anon：可以被匿名访问
@@ -59,13 +67,13 @@
                 /jsps/user/** = anon
                 /static/** = anon
                 /user/** = anon
-                /logout = logout
-                
-                 <!--/jsps/index.jsp = roles[user]
-                 /jsps/admin.jsp = roles[admin]-->
+                /logout = syslog, logout
+
+                <!--/jsps/index.jsp = roles[user]
+                /jsps/admin.jsp = roles[admin]-->
                 
                 # everything else requires authentication:
-                 <!--/** = authc-->
+                <!--/** = syslog, authc-->
             </value>
         </property>
     </bean> 

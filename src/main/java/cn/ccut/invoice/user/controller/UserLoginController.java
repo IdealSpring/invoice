@@ -95,6 +95,7 @@ public class UserLoginController {
         /*保存用户ID到Session域*/
 		User user = userService.findByEmail(userCustom.getEmail());
         request.getSession().setAttribute("roleID", user.getUid());
+		request.getSession().setAttribute("currentUser", user);
 		System.out.println("Long---roleID: " + user.getUid());
 
 		if(user.getRole().equals("user")) {
