@@ -17,6 +17,13 @@ public class UsermanagementController {
     @Resource(name = "usermanagementService")
     private UsermanagementService usermanagementService;
 
+    /**
+     * 更改用户
+     *
+     * @param record
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/editUser", produces = "text/plain; charset=UTF-8")
     @ResponseBody
     public String editUser(UserManagement record) throws Exception{

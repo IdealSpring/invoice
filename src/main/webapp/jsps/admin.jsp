@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -70,15 +71,20 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-picture">
-            <dt><i class="Hui-iconfont">&#xe613;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a data-href="<c:url value="/adminManagement/adminList"/>" data-title="信息管理" href="javascript:void(0)">信息管理</a></li>
-                    <li><a data-href="<c:url value="/adminManagement/premList"/>" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
-                </ul>
-            </dd>
-        </dl>
+
+        <shiro:hasRole name="super">
+            <dl id="menu-picture">
+                <dt><i class="Hui-iconfont">&#xe613;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a data-href="<c:url value="/adminManagement/adminList"/>" data-title="信息管理" href="javascript:void(0)">信息管理</a></li>
+                        <li><a data-href="<c:url value="/adminManagement/premList"/>" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </shiro:hasRole>
+
+
         <dl id="menu-product">
             <dt><i class="Hui-iconfont">&#xe620;</i>日志管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -100,7 +106,7 @@
             <dt><i class="Hui-iconfont">&#xe60d;</i>空间分布<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="member-list.html" data-title="用户分布" href="javascript:;">用户分布</a></li>
+                    <li><a data-href="<c:url value="/jsps/userdistribution/usercharts.jsp"/>" data-title="用户分布" href="javascript:;">用户分布</a></li>
                 </ul>
             </dd>
         </dl>

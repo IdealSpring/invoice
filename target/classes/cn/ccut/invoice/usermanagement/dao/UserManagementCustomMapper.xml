@@ -10,6 +10,6 @@
     </select>
 
     <insert id="addUser" parameterType="cn.ccut.invoice.usermanagement.model.UserManagementCustom">
-        INSERT INTO USER(NAME,PASSWORD,email) VALUES(#{name},#{password},#{email})
+        INSERT INTO USER(NAME,PASSWORD,email,state) VALUES(#{name},#{password},#{email},TRUE )
     </insert>
 </mapper>

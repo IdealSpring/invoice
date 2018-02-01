@@ -15,6 +15,11 @@ public class UsermanagementServiceImpl implements UsermanagementService {
     @Autowired
     private UserManagementCustomMapper userManagementCustomMapper;
 
+    /**
+     * 添加用户
+     * @param userManagement
+     * @throws Exception
+     */
     public void addUser(UserManagement userManagement) throws Exception {
         userManagementCustomMapper.addUser(userManagement);
     }
