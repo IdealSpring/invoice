@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ccut.invoice.addedtax.dao.AddedTaxMapper" >
+  <resultMap id="BaseResultMap" type="cn.ccut.invoice.addedtax.model.AddedTax" >
+    <id column="iid" property="iid" jdbcType="INTEGER" />
+    <result column="number" property="number" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="kind" property="kind" jdbcType="BIT" />
+    <result column="money" property="money" jdbcType="DECIMAL" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="date" property="date" jdbcType="DATE" />
+    <result column="inputdate" property="inputdate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    iid, number, name, kind, money, uid, date, inputdate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from invoice
+    where iid = #{iid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from invoice
+    where iid = #{iid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.ccut.invoice.addedtax.model.AddedTax" >
+    insert into invoice (iid, number, name, 
+      kind, money, uid, date, 
+      inputdate)
+    values (#{iid,jdbcType=INTEGER}, #{number,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, 
+      #{kind,jdbcType=BIT}, #{money,jdbcType=DECIMAL}, #{uid,jdbcType=INTEGER}, #{date,jdbcType=DATE}, 
+      #{inputdate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.ccut.invoice.addedtax.model.AddedTax" >
+    insert into invoice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="iid != null" >
+        iid,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="kind != null" >
+        kind,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="inputdate != null" >
+        inputdate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="iid != null" >
+        #{iid,jdbcType=INTEGER},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null" >
+        #{kind,jdbcType=BIT},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="inputdate != null" >
+        #{inputdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.ccut.invoice.addedtax.model.AddedTax" >
+    update invoice
+    <set >
+      <if test="number != null" >
+        number = #{number,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null" >
+        kind = #{kind,jdbcType=BIT},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=DATE},
+      </if>
+      <if test="inputdate != null" >
+        inputdate = #{inputdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where iid = #{iid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.ccut.invoice.addedtax.model.AddedTax" >
+    update invoice
+    set number = #{number,jdbcType=CHAR},
+      name = #{name,jdbcType=VARCHAR},
+      kind = #{kind,jdbcType=BIT},
+      money = #{money,jdbcType=DECIMAL},
+      uid = #{uid,jdbcType=INTEGER},
+      date = #{date,jdbcType=DATE},
+      inputdate = #{inputdate,jdbcType=TIMESTAMP}
+    where iid = #{iid,jdbcType=INTEGER}
+  </update>
+</mapper>
