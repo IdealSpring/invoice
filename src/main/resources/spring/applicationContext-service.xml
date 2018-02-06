@@ -16,6 +16,8 @@
             http://www.springframework.org/schema/tx/spring-tx.xsd  
             http://www.springframework.org/schema/aop  
             http://www.springframework.org/schema/aop/spring-aop.xsd ">
+    <!-- 发票管理的service -->
+    <bean id="addedTaxService" class="cn.ccut.invoice.addedtax.service.impl.AddedTaxServiceImpl"/>
 
 </beans> 
 

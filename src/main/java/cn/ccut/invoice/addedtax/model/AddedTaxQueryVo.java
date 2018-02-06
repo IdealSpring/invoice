@@ -16,6 +16,9 @@ public class AddedTaxQueryVo {
     // 批量发票信息
     private List<AddedTaxCustom> addedTaxList;
 
+    // 增值税
+    private List Tax;
+
     public AddedTax getAddedTax() {
         return addedTax;
     }

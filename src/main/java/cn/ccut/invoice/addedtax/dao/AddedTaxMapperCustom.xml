@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.ccut.invoice.addedtax.dao.AddedTaxMapperCustom" >
+
+    <!-- sql片段 -->
+    <sql id="query_addedTax_where">
+        <if test="addedTax!=null">
+            <if test="addedTax.uid!=null and addedTax.uid!=''">
+                invoice.uid LIKE '%${addedTaxCustom.uid}%'
+            </if>
+        </if>
+    </sql>
+
     <!--  发票查询列表 -->
     <select id="findInvoiceList" parameterType="cn.ccut.invoice.addedtax.model.AddedTaxQueryVo"
             resultType="cn.ccut.invoice.addedtax.model.AddedTaxCustom">
-        SELECT * FROM invoice WHERE uid=#{uid}
+          SELECT invoice.* FROM invoice
+        <where>
+            <include refid="query_addedTax_where"/>
+        </where>
     </select>
-
 
 </mapper>
