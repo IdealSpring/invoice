@@ -16,7 +16,7 @@ import java.util.Date;
 public class AddedTaxDateConverter implements Converter<String, Date>{
 
     public Date convert(String s) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM--dd HH:mm:ss");
 
         try {
             // 转成直接返回

@@ -14,7 +14,7 @@ public class AddedTax {
 
     private String name;
 
-    private Boolean kind;
+    private int kind;
 
     private BigDecimal money;
 
@@ -37,7 +37,15 @@ public class AddedTax {
     }
 
     public void setNumber(String number) {
-        this.number = number == null ? null : number.trim();
+        this.number = number;
+    }
+
+    public int getKind() {
+        return kind;
+    }
+
+    public void setKind(int kind) {
+        this.kind = kind;
     }
 
     public String getName() {
@@ -46,14 +54,6 @@ public class AddedTax {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public Boolean getKind() {
-        return kind;
-    }
-
-    public void setKind(Boolean kind) {
-        this.kind = kind;
     }
 
     public BigDecimal getMoney() {

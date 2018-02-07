@@ -102,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt><i class="Hui-iconfont">&#xe60d;</i>增值税计算<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="" data-title="税金统计结果" href="javascript:;">税金统计结果</a></li>
+					<li><a data-href="<c:url value="/jsps/addedtax/taxstatistics.jsp"/>"  data-title="税金统计结果" href="javascript:void(0)">税金统计结果</a></li>
 			</ul>
 		</dd>
 	</dl>

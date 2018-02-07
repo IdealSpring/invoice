@@ -40,14 +40,14 @@
             -
             <input name="endDate" type="text" id="datemax" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" class="input-text Wdate" style="width:120px;">
             <input name="query" type="text" class="input-text" style="width:250px" placeholder="名称" id="" >
-            <button type="button" onclick="submitQuery()" class="btn btn-success radius"  name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="button" onclick="submitQuery()" class="btn btn-success radius"  name="" ><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 
 
             <span class="r">第<strong><span id="spanId-1"></span></strong>页/共<strong id="spanId-2"><span></span></strong>页</span> </div>
     </div>
 
     <div class="mt-20">
-        <form name="addedTaxList" action="<c:url value="/addedtax/taxStatistics"/>" method="post">
+        <form name="addedTaxList" action="${pageContext.request.contextPath }/addedtax/taxStatistics" method="post">
             <table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
                 <thead>
                 <tr class="text-c">
@@ -64,16 +64,13 @@
                     <td width="240"><fmt:formatDate value="${addedTax.date}" pattern="yyyy-MM"/></td>
                     <td >${addedTax.name}</td>
                     <td width="240">${addedTax.money}</td>
-                    <td width="240"><a href="${pageContext.request.contextPath}/">查看</a></td>
+                    <td width="240"><a href="${pageContext.request.contextPath}/addedtax/taxStatisticsDetail?date=${addedTax.date}">进销项信息</a></td>
                 </tr>
                 </c:forEach>
-                <tr class="text-c">
-                    <td><a href="${pageContext.request.contextPath }/addedtax/taxStatistics">修改</a></td>
-                </tr>
             </table>
         </form>
 
-        <%--<div class="pageDiv">
+       <%-- <div class="pageDiv">
             <ul data-am-widget="pagination"
                 class="am-pagination am-pagination-default">
                 <li class="am-pagination-first">
@@ -103,6 +100,7 @@
                         </c:if>
                     </c:otherwise>
                 </c:choose>
+
                 <c:forEach var="i" begin="${begin}" end="${end}">
                     <li class="">
                         <a href="<c:url value="/indata/pageRecord?pageCode=${i}"/>" class="am-btn-xs">${i}</a>
@@ -136,6 +134,10 @@
 <script type="text/javascript" src="static/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="static/myscript/data_js.js"></script>
 <script type="text/javascript">
+    function submitQuery() {
+        document.addedTaxList.action="${pageContext.request.contextPath }/addedtax/taxStatistics";
+        document.addedTaxList.submit();
+    }
 
 </script>
 

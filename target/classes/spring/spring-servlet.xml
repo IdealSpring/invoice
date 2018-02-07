@@ -38,6 +38,7 @@
             <list>
                 <!--日期类型转换-->
                 <bean class="cn.ccut.invoice.indata.controller.converter.DataConverter"/>
+                <bean class="cn.ccut.invoice.addedtax.controller.converter.AddedTaxDateConverter"/>
             </list>
         </property>
     </bean>

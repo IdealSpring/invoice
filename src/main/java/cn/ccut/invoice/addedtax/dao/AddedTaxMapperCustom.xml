@@ -14,10 +14,27 @@
     <!--  发票查询列表 -->
     <select id="findInvoiceList" parameterType="cn.ccut.invoice.addedtax.model.AddedTaxQueryVo"
             resultType="cn.ccut.invoice.addedtax.model.AddedTaxCustom">
-          SELECT invoice.* FROM invoice
+          SELECT invoice.* FROM invoice ORDER BY date
         <where>
             <include refid="query_addedTax_where"/>
         </where>
+    </select>
+
+    <!-- 根据用户id和日期查询个数 -->
+    <select id="findNumberByDate" resultType="int">
+        SELECT COUNT(*) FROM invoice
+        WHERE
+          invoice.uid=#{0}
+          invoice.date LIKE #{1}
+    </select>
+
+    <select id="findInvoiceListByDate" resultType="cn.ccut.invoice.addedtax.model.AddedTaxCustom">
+        SELECT COUNT(*) FROM invoice ORDER BY date
+        WHERE
+        invoice.uid=#{0}
+        invoice.date LIKE #{1}
+        LIMIT
+        #{2},#{3}
     </select>
 
 </mapper>
