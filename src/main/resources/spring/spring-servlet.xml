@@ -49,6 +49,9 @@
         <!--set the max upload size100MB-->
         <property name="maxUploadSize" value="104857600"/>
     </bean>
+
+    <!-- 全局异常处理器 -->
+    <bean class="cn.ccut.invoice.exception.MyException"></bean>
 </beans> 
 
 

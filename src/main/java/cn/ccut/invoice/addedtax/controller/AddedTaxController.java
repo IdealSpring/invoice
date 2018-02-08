@@ -4,6 +4,7 @@ import cn.ccut.invoice.addedtax.model.AddedTaxCustom;
 import cn.ccut.invoice.addedtax.model.AddedTaxQueryVo;
 import cn.ccut.invoice.addedtax.model.PageBean;
 import cn.ccut.invoice.addedtax.service.AddedTaxService;
+import cn.ccut.invoice.exception.CustomException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -96,6 +97,8 @@ public class AddedTaxController {
             SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM");
             date = dateFormat2.format(d);
             request.getSession().setAttribute("date1", date);
+        } else {
+            throw new CustomException("未知错误");
         }
 
         // 在session中获取用户id(uid)
