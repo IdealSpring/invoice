@@ -43,7 +43,7 @@
             <button type="button" onclick="submitQuery()" class="btn btn-success radius"  name="" ><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 
 
-            <span class="r">第<strong><span id="spanId-1"></span></strong>页/共<strong id="spanId-2"><span></span></strong>页</span> </div>
+            <%--<span class="r">第<strong><span id="spanId-1"></span></strong>页/共<strong id="spanId-2"><span></span></strong>页</span>--%> </div>
     </div>
 
     <div class="mt-20">
@@ -64,7 +64,7 @@
                     <td width="240"><fmt:formatDate value="${addedTax.date}" pattern="yyyy-MM"/></td>
                     <td >${addedTax.name}</td>
                     <td width="240">${addedTax.money}</td>
-                    <td width="240"><a href="${pageContext.request.contextPath}/addedtax/taxStatisticsDetail?date=${addedTax.date}">进销项信息</a></td>
+                    <td width="240"><a href="${pageContext.request.contextPath}/addedtax/taxStatisticsDetailQuery?date=${addedTax.date}">进销项信息</a></td>
                 </tr>
                 </c:forEach>
             </table>
@@ -138,7 +138,6 @@
         document.addedTaxList.action="${pageContext.request.contextPath }/addedtax/taxStatistics";
         document.addedTaxList.submit();
     }
-
 </script>
 
 </body>

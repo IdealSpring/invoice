@@ -43,8 +43,8 @@
             <th >发票名称</th>
             <th width="170">种类</th>
             <th width="170">金额</th>
-            <th width="170">发票时间</th>
-            <th width="170">导入时间</th>
+            <th width="200">发票时间</th>
+            <th width="200">导入时间</th>
         </tr>
         </thead>
         <c:forEach items="${pageBean.list}" var="addedTax">
@@ -56,26 +56,26 @@
                     <c:when test="${addedTax.kind == 1}">
                         <td width="170">进项数据</td>
                     </c:when>
-                    <c:when test="${addedTax.kind == 1}">
+                    <c:when test="${addedTax.kind == 0}">
                         <td width="170">销项数据</td>
                     </c:when>
                 </c:choose>
                 <td width="170">${addedTax.money}</td>
-                <td width="170"><fmt:formatDate value="${addedTax.date}" pattern="yyyy-MM-dd"/></td>
-                <td width="170"><fmt:formatDate value="${addedTax.inputdate}" pattern="yyyy-MM-dd"/></td>
+                <td width="200"><fmt:formatDate value="${addedTax.date}" pattern="yyyy-MM-dd"/></td>
+                <td width="200"><fmt:formatDate value="${addedTax.inputdate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
             </tr>
         </c:forEach>
     </table>
 
-    <%-- <div class="pageDiv">
+     <div class="pageDiv">
             <ul data-am-widget="pagination"
                 class="am-pagination am-pagination-default">
                 <li class="am-pagination-first">
-                    <a href="<c:url value="/indata/pageRecord?pageCode=1"/>" class="am-btn-xs">首页</a>
+                    <a href="<c:url value="/addedtax/taxStatisticsDetail?pageCode=1"/>" class="am-btn-xs">首页</a>
                 </li>
                 <c:if test="${pageBean.pageCode > 1}">
                     <li class="am-pagination-prev">
-                        <a href="<c:url value="/indata/pageRecord?pageCode=${pageBean.pageCode - 1}"/>" class="am-btn-xs">上一页</a>
+                        <a href="<c:url value="/addedtax/taxStatisticsDetail?pageCode=${pageBean.pageCode - 1}"/>" class="am-btn-xs">上一页</a>
                     </li>
                 </c:if>
 
@@ -100,20 +100,20 @@
 
                 <c:forEach var="i" begin="${begin}" end="${end}">
                     <li class="">
-                        <a href="<c:url value="/indata/pageRecord?pageCode=${i}"/>" class="am-btn-xs">${i}</a>
+                        <a href="<c:url value="/addedtax/taxStatisticsDetail?pageCode=${i}"/>" class="am-btn-xs">${i}</a>
                     </li>
                 </c:forEach>
 
                 <c:if test="${pageBean.pageCode < pageBean.totalPage}">
                     <li class="am-pagination-next">
-                        <a href="<c:url value="/indata/pageRecord?pageCode=${pageBean.pageCode + 1}"/>" class="am-btn-xs">下一页</a>
+                        <a href="<c:url value="/addedtax/taxStatisticsDetail?pageCode=${pageBean.pageCode + 1}"/>" class="am-btn-xs">下一页</a>
                     </li>
                 </c:if>
                 <li class="am-pagination-last am-btn-xs">
-                    <a href="<c:url value="/indata/pageRecord?pageCode=${pageBean.totalPage}"/>" class="am-btn-xs">尾页</a>
+                    <a href="<c:url value="/addedtax/taxStatisticsDetail?pageCode=${pageBean.totalPage}"/>" class="am-btn-xs">尾页</a>
                 </li>
             </ul>
-        </div>--%>
+        </div>
 </div>
 
 

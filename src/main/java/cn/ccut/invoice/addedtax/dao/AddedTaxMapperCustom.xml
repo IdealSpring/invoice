@@ -24,17 +24,17 @@
     <select id="findNumberByDate" resultType="int">
         SELECT COUNT(*) FROM invoice
         WHERE
-          invoice.uid=#{0}
+          invoice.uid=#{0} AND
           invoice.date LIKE #{1}
     </select>
 
     <select id="findInvoiceListByDate" resultType="cn.ccut.invoice.addedtax.model.AddedTaxCustom">
-        SELECT COUNT(*) FROM invoice ORDER BY date
+        SELECT * FROM invoice
         WHERE
-        invoice.uid=#{0}
-        invoice.date LIKE #{1}
+          invoice.uid=#{0} AND
+          invoice.date LIKE #{1}
         LIMIT
-        #{2},#{3}
+          #{2},#{3}
     </select>
 
 </mapper>

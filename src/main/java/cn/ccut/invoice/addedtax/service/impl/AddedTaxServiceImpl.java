@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -91,15 +90,16 @@ public class AddedTaxServiceImpl implements AddedTaxService {
      * @throws Exception
      */
     public PageBean selectByDate(int uid, String date, int pageCode, int pageSize) throws Exception {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
+        /*DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
         Date d =  dateFormat.parse(date);
-        date = dateFormat.format(d);
+        date = dateFormat.format(d);*/
 
         PageBean pageBean = new PageBean();
         pageBean.setPageCode(pageCode);
         pageBean.setPageSize(pageSize);
-        pageBean.setTotalRecord(addedTaxMapperCustom.findNumberByDate(uid, date));
-
+        date += "%";
+        int tp = addedTaxMapperCustom.findNumberByDate(uid, date);
+        pageBean.setTotalRecord(tp);
         List<AddedTaxCustom> list = addedTaxMapperCustom.findInvoiceListByDate(uid, date,(pageCode-1)*pageSize, pageSize);
         pageBean.setList(list);
 
